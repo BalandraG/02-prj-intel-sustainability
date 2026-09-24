@@ -162,7 +162,8 @@ img {
 	.scroll-line,
 	.timeline-card,
 	.card-image,
-	.card-details > p {
+		.card-details > p,
+		.desktop-description {
 		animation: none;
 		transition: none;
 	}
@@ -349,16 +350,14 @@ img {
 }
 
 .card-details {
-	position: absolute;
-	inset: 0;
-	z-index: 2;
+	display: none;
 }
 
 .card-details summary {
 	display: none;
 }
 
-.card-details > p {
+.desktop-description {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -389,7 +388,7 @@ img {
 	filter: brightness(0.62);
 }
 
-.timeline-card:hover .card-details > p {
+.timeline-card:hover .desktop-description {
 	opacity: 1;
 	transform: translateY(0);
 }
@@ -465,7 +464,12 @@ img {
 	}
 
 	.card-details {
+		display: block;
 		position: static;
+	}
+
+	.desktop-description {
+		display: none;
 	}
 
 	.card-details summary {
